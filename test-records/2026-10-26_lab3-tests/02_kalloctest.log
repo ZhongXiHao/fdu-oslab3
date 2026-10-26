@@ -1,0 +1,79 @@
+kalloctest
+start test1
+test1 results:
+--- lock kmem/bcache stats
+lock: kmem: #test-and-set 0 #acquire() 53224
+lock: kmem: #test-and-set 0 #acquire() 134615
+lock: kmem: #test-and-set 0 #acquire() 117602
+lock: kmem: #test-and-set 0 #acquire() 127893
+lock: kmem: #test-and-set 0 #acquire() 18
+lock: kmem: #test-and-set 0 #acquire() 18
+lock: kmem: #test-and-set 0 #acquire() 18
+lock: kmem: #test-and-set 0 #acquire() 18
+lock: bcache_evict: #test-and-set 0 #acquire() 61
+lock: bcache_bucket: #test-and-set 0 #acquire() 93
+lock: bcache_bucket: #test-and-set 0 #acquire() 116
+lock: bcache_bucket: #test-and-set 0 #acquire() 81
+lock: bcache_bucket: #test-and-set 0 #acquire() 45
+lock: bcache_bucket: #test-and-set 0 #acquire() 191
+lock: bcache_bucket: #test-and-set 0 #acquire() 90
+lock: bcache_bucket: #test-and-set 0 #acquire() 71
+lock: bcache_bucket: #test-and-set 0 #acquire() 62
+lock: bcache_bucket: #test-and-set 0 #acquire() 34
+lock: bcache_bucket: #test-and-set 0 #acquire() 26
+lock: bcache_bucket: #test-and-set 0 #acquire() 1284
+lock: bcache_bucket: #test-and-set 0 #acquire() 50
+lock: bcache_bucket: #test-and-set 0 #acquire() 58
+--- top 5 contended locks:
+lock: proc: #test-and-set 256906 #acquire() 645124
+lock: virtio_disk: #test-and-set 189333 #acquire() 234
+lock: proc: #test-and-set 173441 #acquire() 244950
+lock: proc: #test-and-set 170015 #acquire() 645120
+lock: proc: #test-and-set 112611 #acquire() 244950
+tot= 0
+test1 OK
+start test2
+total free number of pages: 32460 (out of 32768)
+..........
+test2 OK
+start test3
+..........child done 10000
+
+test3 OK
+start test4
+............................child done 100000
+..cchihlid dlodne  d10o0n000
+e 100000
+--- lock kmem/bcache stats
+lock: kmem: #test-and-set 30 #acquire() 612282
+lock: kmem: #test-and-set 0 #acquire() 669497
+lock: kmem: #test-and-set 65 #acquire() 697620
+lock: kmem: #test-and-set 18 #acquire() 1192057
+lock: kmem: #test-and-set 0 #acquire() 1553
+lock: kmem: #test-and-set 0 #acquire() 1553
+lock: kmem: #test-and-set 0 #acquire() 1553
+lock: kmem: #test-and-set 0 #acquire() 1553
+lock: bcache_evict: #test-and-set 0 #acquire() 61
+lock: bcache_bucket: #test-and-set 0 #acquire() 93
+lock: bcache_bucket: #test-and-set 0 #acquire() 116
+lock: bcache_bucket: #test-and-set 0 #acquire() 81
+lock: bcache_bucket: #test-and-set 0 #acquire() 45
+lock: bcache_bucket: #test-and-set 0 #acquire() 195
+lock: bcache_bucket: #test-and-set 0 #acquire() 90
+lock: bcache_bucket: #test-and-set 0 #acquire() 71
+lock: bcache_bucket: #test-and-set 0 #acquire() 62
+lock: bcache_bucket: #test-and-set 0 #acquire() 34
+lock: bcache_bucket: #test-and-set 0 #acquire() 26
+lock: bcache_bucket: #test-and-set 0 #acquire() 1400
+lock: bcache_bucket: #test-and-set 0 #acquire() 50
+lock: bcache_bucket: #test-and-set 0 #acquire() 58
+--- top 5 contended locks:
+lock: wait_lock: #test-and-set 54996230 #acquire() 40041
+lock: proc: #test-and-set 12045036 #acquire() 1066752
+lock: proc: #test-and-set 838026 #acquire() 1936942
+lock: proc: #test-and-set 537673 #acquire() 2459763
+lock: uart: #test-and-set 394599 #acquire() 3434
+tot= 113
+
+test4 OK
+$ 

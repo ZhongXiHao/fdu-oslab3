@@ -1,0 +1,37 @@
+rwlktest
+rwspinlock_test: step 1: initrwlock
+rwspinlock_test: step 2: concurrent read_acquire
+rwspinlock_test: step 3: concurrent read_release
+rwspinlock_test: step 4: prepare read_acquire for writer priority test
+rwspinlock_test: step 5: writer priority test
+rwspinlock_test: step 6: checking for concurrent readers/writers
+rwspinlock_test: step 7: checking for concurrent writers
+rwspinlock_test: step 8: acquiring multiple locks
+rwspinlock_test: step 9: releasing multiple locks
+rwspinlock_test: step 10: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 11: multiple writer priority test
+rwspinlock_test: step 12: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 13: multiple writer priority test
+rwspinlock_test: step 14: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 15: multiple writer priority test
+rwspinlock_test: step 16: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 17: multiple writer priority test
+rwspinlock_test: step 18: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 19: multiple writer priority test
+rwspinlock_test: step 20: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 21: multiple writer priority test
+rwspinlock_test: step 22: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 23: multiple writer priority test
+rwspinlock_test: step 24: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 25: multiple writer priority test
+rwspinlock_test: step 26: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 27: multiple writer priority test
+rwspinlock_test: step 28: prepare read_acquire for multiple writer priority test
+rwspinlock_test: step 29: multiple writer priority test
+rwspinlock_test: step 30: done
+rwspinlock_test(2): 0
+rwspinlock_test(3): 0
+rwspinlock_test(1): 0
+rwspinlock_test(0): 0
+rwlktest: 4/4 CPUs succeeded
+$ 
