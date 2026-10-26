@@ -99,6 +99,13 @@ endif
 CFLAGS += $(XCFLAGS)
 CFLAGS += -MD
 CFLAGS += -mcmodel=medany
+# Pin the ISA to what QEMU's default 'rv64' CPU model implements. Newer
+# toolchains (e.g. gcc 15 on Ubuntu) default -march to a much wider set of
+# extensions (zba/zbb/zcb/v/...). GCC then opportunistically compresses
+# plain instructions like "mul" into Zcb's "c.mul", which QEMU's default
+# CPU doesn't implement, causing an illegal-instruction trap loop before
+# any kernel output is printed (looks like qemu "hanging" at boot).
+CFLAGS += -march=rv64imafdc_zicsr_zifencei -mabi=lp64d
 CFLAGS += -ffreestanding
 CFLAGS += -fno-common -nostdlib
 CFLAGS += -fno-builtin-strncpy -fno-builtin-strncmp -fno-builtin-strlen -fno-builtin-memset
@@ -139,7 +146,7 @@ $K/%.o: $K/%.c
 	$(CC) $(CFLAGS) $(EXTRAFLAG) -c -o $@ $<
 
 $K/%.o: $K/%.S
-	$(CC) -g -c -o $@ $<
+	$(CC) -g -march=rv64imafdc_zicsr_zifencei -mabi=lp64d -c -o $@ $<
 
 tags: $(OBJS)
 	etags kernel/*.S kernel/*.c
